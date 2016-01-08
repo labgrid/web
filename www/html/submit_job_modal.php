@@ -19,12 +19,11 @@
                             <input name="exe" id="exe-input" class="form-control" type="exe" placeholder="mycooljob.py">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <form enctype="multipart/form-data" action="upload.php" method="post">
-                            <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
-                            Choose a file to upload: <input name="uploaded_file" type="file" />
-                            <input type="submit" value="Upload" />
-                        </form>
+                    <div class="form-group">  
+                    <label for="file-input" class="control-label col-lg-3">File Upload</label>
+                        <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
+                        Choose a file to upload: <input name="uploaded_file" type="file" />
+                        <input type="submit" value="file" />
                     </div>
                     <div class="form-group">
                         <label for="human-confirmation" class="control-label col-lg-3">Confirm</label>

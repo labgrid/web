@@ -6,7 +6,7 @@ require_once "../includes/recaptchalib.php";
 $secret_key = "6LeajhATAAAAAETdecYEOT9QSql6xeUvNw_e_GST";
 $response = null;
 $reCAPTCHA = new ReCaptcha($secret_key);
-if (isset($_POST['g-recaptcha-response'], $_POST['name'], $_POST['email'], $_POST['message'])) {
+if (isset($_POST['g-recaptcha-response'], $_POST['jobname'], $_POST['exe'], $_POST['file'])) {
     $reponse = $reCAPTCHA->verifyResponse(
         $_SERVER['REMOTE_ADDR'],
         $_POST['g-recaptcha-response']
@@ -14,18 +14,13 @@ if (isset($_POST['g-recaptcha-response'], $_POST['name'], $_POST['email'], $_POS
 
     if ($response == null || !($response->success)) header("location:javascript://history.go(-1)");
 
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $jobname = $_POST['jobname'];
+    $exe = $_POST['exe'];
+    $file = $_POST['file'];
 
-    $from = 'From: LabGrid-Contact';
-    $to = 'theodoreando99@gmail.com';
-    $subject = 'Contact Request';
-    $body = "From: $name\nEmail: $email\nMessage: $message";
 
-    mail($to, $subject, $body, $from);
-    mail('benjamin.h.glick@gmail.com', $subject, $body, $from);
-    mail('lyoung@ucls.uchicago.edu', $subject, $body, $from);
+
+   exec("python make_sub_file.py -jobname ")
 }
 
 header("location:javascript://history.go(-1)");
