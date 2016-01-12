@@ -20,10 +20,10 @@ if (isset($_POST['g-recaptcha-response'], $_POST['jobname'], $_POST['exe'], $_PO
     $jobname = $_POST['jobname'];
     $exe = $_POST['exe'];
     $file = $_POST['file'];
-    $filetype = $_POST['type']
+    $filetype = $_POST['type'];
 if(check_login($db_connection)){
     #finish this
-   exec("python make_sub_file.py -jobname "+$jobname+" -outfile "+$jobname+".sub -executable_file "+$exe+"-filetype "+$type+"-user_args "+$file)
+   exec("python make_sub_file.py -jobname "+$jobname+" -outfile "+$jobname+".out -executable_file "+$exe+"-filetype "+$type+"-user_args "+$file);
 }
 
 }
