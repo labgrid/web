@@ -19,6 +19,27 @@
                             <input name="exe" id="exe-input" class="form-control" type="exe" placeholder="mycooljob.py">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="size" data-toggle="size" aria-haspopup="true" aria-expanded="true">
+                             Size(number of simultaneous jobs)
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="size">
+                            <?php
+                                for ($i=1; $i <11 ; $i++) { 
+                                    echo "<li><a href='#'> "+$i+" </a></li>";
+                                }
+                            ?>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                     <div class="form-group">
+                        <label for="desc-input" class="control-label col-lg-3">Description</label>
+                        <div class="col-lg-8">
+                            <input name="desc" id="desc-input" class="form-control" type="desc" placeholder="Adds Numbers">
+                        </div>
+                    </div>
                     <div class="form-group">  
                     <label for="file-input" class="control-label col-lg-3">File Upload</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
