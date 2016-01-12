@@ -1,7 +1,7 @@
 <?php
 include 'login.php';
-include_once "../php-security/db_connect.php";
-include_once "../php-security/security_functions.php";
+include "../php-security/db_connect.php";
+include "../php-security/security_functions.php";
 
 // We use Google's supplied recaptcha code library
 require_once "../includes/recaptchalib.php";
@@ -21,9 +21,11 @@ if (isset($_POST['g-recaptcha-response'], $_POST['jobname'], $_POST['exe'], $_PO
     $exe = $_POST['exe'];
     $file = $_POST['file'];
     $filetype = $_POST['type'];
+sec_session_start();
 if(check_login($db_connection)){
-    #finish this
    exec("python make_sub_file.py -jobname "+$jobname+" -outfile "+$jobname+".out -executable_file "+$exe+"-filetype "+$type+"-user_args "+$file);
+   #Make a database entry
+   #i d k m a n g how to do that
 }
 
 }
